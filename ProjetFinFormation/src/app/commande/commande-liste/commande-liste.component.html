@@ -1,0 +1,25 @@
+<br>
+<h2> Liste des Commandes </h2>
+<br>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Id Commande </th>
+            <th> Date Commande </th>
+            <th> Id Client </th>
+            <th> Nom Client </th>
+            <th> Prenom Client </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let commande of commandes" >
+            <td> {{ commande.idCommande }} </td>
+            <td> {{ commande.dateCommande }} </td>
+            <td> {{ commande.client.idClient }} </td>
+            <td> {{ commande.client.nomClient }} </td>
+            <td> {{ commande.client.prenomClient }} </td>
+            <td><button (click)= "voirCommande(commande.idCommande)" class="btn btn-info">La liste des produits</button></td>
+        </tr>
+    </tbody>
+    
+</table>

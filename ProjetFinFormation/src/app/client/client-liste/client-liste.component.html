@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    <div class="row mb-3">
+      <div class="col-md-8">
+        <input type="text" class="form-control" [(ngModel)]="keyword" placeholder="Search clients...">
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-primary" (click)="searchClients()">Search</button>
+      </div>
+    </div>
+</div>
+<br><br><br>
+<h2> Liste des Clients </h2>
+<br>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Id Client </th>
+            <th> Nom Client </th>
+            <th> Prenom Client </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let client of clients" >
+            <td> {{ client.idClient }} </td>
+            <td> {{ client.nomClient }} </td>
+            <td> {{ client.prenomClient }} </td>
+            <td>
+                <button (click)= "updateClient(client.idClient)" class="btn btn-info">Update</button>
+                <button (click) = "deleteClient(client.idClient)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            
+            </td>
+        </tr>
+    </tbody>
+    
+</table>

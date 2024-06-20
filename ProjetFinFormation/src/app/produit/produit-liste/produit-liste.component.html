@@ -1,0 +1,34 @@
+<br>
+<h2> Liste des Produits </h2>
+<br>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Id Produit </th>
+            <th> Nom Produit </th>
+            <th> Qunatite en Stock </th>
+            <th> Prix</th>
+            <th> Id Fournisseur </th>
+            <th> Nom Fournisseur </th>
+            <th> Prenom Fournisseur </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let produit of produits" >
+            <td> {{ produit.idProduit }} </td>
+            <td> {{ produit.nomProduit }} </td>
+            <td> {{ produit.quantiteStock }} </td>
+            <td> {{ produit.prix }} </td>
+            <td> {{ produit.fournisseur.idFournisseurr }} </td>
+            <td> {{ produit.fournisseur.nomFournisseur }} </td>
+            <td> {{ produit.fournisseur.prenomFournisseur }} </td>
+            <td>
+                <button (click)= "updateProduit(produit.idProduit)" class="btn btn-info">Update</button>
+                <button (click) = "deleteProduit(produit.idProduit)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            
+            </td>
+        </tr>
+    </tbody>
+    
+</table>

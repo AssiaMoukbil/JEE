@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <h2>Liste des Produits Commande</h2>
+    <br>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id Commande</th>
+          <th>Date Commande</th>
+          <th>Id Produit</th>
+          <th>Nom Produit</th>
+          <th>Quantite en Stock</th>
+          <th>Prix</th>
+          <th>Quantite Commande</th>
+          <th>Prix * Quantite</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ligneCommande of ligneCommandes">
+          <td>{{ ligneCommande.commande.idCommande }}</td>
+          <td>{{ ligneCommande.commande.dateCommande | date }}</td>
+          <td>{{ ligneCommande.produit.idProduit }}</td>
+          <td>{{ ligneCommande.produit.nomProduit }}</td>
+          <td>{{ ligneCommande.produit.quantiteStock }}</td>
+          <td>{{ ligneCommande.produit.prix }}</td>
+          <td>{{ ligneCommande.quantite }}</td>
+          <td>{{ ligneCommande.produit.prix * ligneCommande.quantite }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="ajouterLDC(id)" class="btn btn-info">Ajouter un produit</button>
+  </div>
+  

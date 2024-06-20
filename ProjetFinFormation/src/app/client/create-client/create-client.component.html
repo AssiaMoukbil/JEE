@@ -1,0 +1,21 @@
+<div class="col-md-6 offset-md-3">
+    <br>
+    <h3> Create Client </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Nom de Client </label>
+            <input type="text" class ="form-control" id = "nomClient"
+                [(ngModel)] = "client.nomClient" name = "nomClient">
+        </div>
+    
+        <div class="form-group">
+            <label> Prenom de Client</label>
+            <input type="text" class ="form-control" id = "prenomClient"
+                [(ngModel)] = "client.prenomClient" name = "prenomClient">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 
